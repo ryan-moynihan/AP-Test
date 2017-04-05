@@ -14,5 +14,18 @@ function dealCard(handsize) {
 }
 
 function hit() {
-    dealCard(1)
+    dealCard(1);
+    bust();
+}
+
+function add(a, b) {
+    return a + b;
+}
+
+function bust() {
+    var sum = player1.reduce(add, 0);
+    if (player1 > 21) {
+        return sum
+    }
+    return "BUST" >>> >>> > origin / master
 }
