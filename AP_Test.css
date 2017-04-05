@@ -41,7 +41,7 @@
 }
 
 .onoffswitch-inner:before {
-    content: "RAD";
+    content: "A=1";
     padding-left: 10px;
     background-color: #87B6C2;
     color: #FFFFFF;
@@ -49,7 +49,7 @@
 }
 
 .onoffswitch-inner:after {
-    content: "DEG";
+    content: "A=11";
     padding-right: 10px;
     background-color: #9E9E9E;
     color: #FFFFFF;
