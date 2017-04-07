@@ -39,5 +39,7 @@ function acesOrBust {
 }
 
 function Dealer {
-    return
+    if (dealer < 17) {
+        hit(1);
+    }
 }
