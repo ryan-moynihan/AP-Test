@@ -7,7 +7,7 @@ var player1 = [];
 
 function dealCard(handsize) {
     for (var i = 0; i < handsize; i++) {
-        var card = Math.floor(Math.random * (deck.length + 1));
+        var card = Math.floor(Math.random() * (deck.length + 1))
         var deal = deck.splice(deck.indexOf(card), 1)[0];
         player1.push(deal);
     }
