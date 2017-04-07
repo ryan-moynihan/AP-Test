@@ -27,5 +27,5 @@ function bust() {
     if (player1 > 21) {
         return sum
     }
-    return "BUST" >>> >>> > origin / master
+    return "BUST"
 }
