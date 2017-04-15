@@ -42,4 +42,11 @@ function Dealer {
     if (dealer < 17) {
         hit(1);
     }
+    else if (dealer = 17 && dealer.indexOf(A) == 1) {
+        hit(1);
+    }
 }
+
+function initialize() {}
+
+function nextTurn() {}
