@@ -2,45 +2,77 @@ var J = 10;
 var Q = 10;
 var K = 10;
 var A = 11;
-var deck = [A, A, A, A, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, J, J, J, J, Q, Q, Q, Q, K, K, K, K]
+var deckOrig = [11, 11, 11, 11, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+var deck = [];
 var player1 = [];
 var dealer = [];
 var sum = player1.reduce(add, 0);
 var sum2 = dealer.reduce(add, 0);
 
-function dealCard(handsize) {
+function dealCard(handsize, player) {
+    var card;
+    var deal;
     for (var i = 0; i < handsize; i++) {
-        var card = Math.floor(Math.random() * (deck.length + 1))
-        var deal = deck.splice(deck.indexOf(card), 1)[0];
-        player1.push(deal);
-        dealer.push(deal);
+        card = Math.floor(Math.random() * (deck.length));
+        console.log(i);
+        console.log(card);
+        deal = deck[card];
+        deck.splice(card, 1);
+        console.log(i);
+        console.log(deal);
+        player.push(deal);
     }
 }
 
-function hit() {
-    dealCard(1);
-    bust();
+function newGame() {
+    deck = deckOrig;
+    player1 = [];
+    dealer = [];
+}
+
+function hit(player) {
+    dealCard(1, player);
+    return checkForBust(player);
 }
 
 function add(a, b) {
     return a + b;
 }
 
-function bust() {
-    if (player1 > 21) {
-        return sum
+function checkForBust(player) {
+    var sum = player.reduce(add, 0);
+    if (sum > 21) {
+        return "Total: " + sum + " BUSTED!"
     }
-    return "BUST"
-}
-
-function acesOrBust {
-    if (player1 > 21 && player1.indexOf(A) >= 0) {
-        A = 1
+    else {
+        return "Total: " + sum
     }
 }
 
-function Dealer {
-    return
+function endTurn() {
+    var done = false;
+    var sum;
+    dealCard(2, dealer);
+    do {
+        if (dealer.reduce(add, 0) < 17) {
+            hit(dealer);
+        }
+        sum = dealer.reduce(add, 0);
+        if (sum >= 17) {
+            done = true;
+            return checkForBust(dealer) + "</br>" + winner();
+        }
+    }
+    while (done == false)
+}
+
+function winner() {
+    if (player1.reduce(add, 0) <= 21 && (player1.reduce(add, 0) > dealer.reduce(add, 0) || dealer.reduce(add, 0) > 21)) {
+        return "Player1 wins!"
+    }
+    else {
+        return "Dealer wins!"
+    }
 }
 
 function blackJack {
