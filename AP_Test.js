@@ -72,12 +72,3 @@ function winner() {
         return "Dealer wins!"
     }
 }
-
-function acesOrBust {
-    if (player1.reduce(add, 0) > 21 && player1.indexOf(A) >= 0) {
-        A = 1
-    }
-    if (dealer.reduce(add, 0) > 21 && dealer.indexOf(A) >= 0) {
-        A =
-    }
-}
