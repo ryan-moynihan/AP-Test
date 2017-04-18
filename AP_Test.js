@@ -81,7 +81,3 @@ function acesOrBust {
         A =
     }
 }
-
-function initialize() {}
-
-function nextTurn() {}
