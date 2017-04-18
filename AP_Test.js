@@ -1,6 +1,3 @@
-var J = 10;
-var Q = 10;
-var K = 10;
 var A = 11;
 var deckOrig = [11, 11, 11, 11, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
 var deck = [];
@@ -33,6 +30,7 @@ function newGame() {
 function hit(player) {
     dealCard(1, player);
     return checkForBust(player);
+    document.write(player);
 }
 
 function add(a, b) {
@@ -75,7 +73,7 @@ function winner() {
     }
 }
 
-function blackJack {
+function blackJack() {
     if(sum = 21){
         return "BLACKJACK!!"
     }
