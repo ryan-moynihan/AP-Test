@@ -2,7 +2,7 @@ var J = 10;
 var Q = 10;
 var K = 10;
 var A = 11;
-var deckOrig = [1, 1, 1, 1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
+var deckOrig = [11, 11, 11, 11, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10, 10]
 var deck = [];
 var player1 = [];
 var dealer = [];
@@ -24,6 +24,8 @@ function dealCard(handsize, player) {
 
 function newGame() {
     deck = deckOrig;
+    player1 = [];
+    dealer = [];
 }
 
 function hit(player) {
@@ -56,10 +58,19 @@ function endTurn() {
         sum = dealer.reduce(add, 0);
         if (sum >= 17) {
             done = true;
-            return checkForBust(dealer);
+            return checkForBust(dealer) + "</br>" + winner();
         }
     }
     while (done == false)
+}
+
+function winner() {
+    if (player1.reduce(add, 0) <= 21 && (player1.reduce(add, 0) > dealer.reduce(add, 0) || dealer.reduce(add, 0) > 21)) {
+        return "Player1 wins!"
+    }
+    else {
+        return "Dealer wins!"
+    }
 }
 
 function acesOrBust {
