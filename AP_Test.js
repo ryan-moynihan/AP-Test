@@ -5,6 +5,8 @@ var A = 11;
 var deck = [A, A, A, A, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 4, 5, 5, 5, 5, 6, 6, 6, 6, 7, 7, 7, 7, 8, 8, 8, 8, 9, 9, 9, 9, 10, 10, 10, 10, J, J, J, J, Q, Q, Q, Q, K, K, K, K]
 var player1 = [];
 var dealer = [];
+var sum = player1.reduce(add, 0);
+var sum2 = dealer.reduce(add, 0);
 
 function dealCard(handsize) {
     for (var i = 0; i < handsize; i++) {
@@ -25,7 +27,6 @@ function add(a, b) {
 }
 
 function bust() {
-    var sum = player1.reduce(add, 0);
     if (player1 > 21) {
         return sum
     }
@@ -40,4 +41,10 @@ function acesOrBust {
 
 function Dealer {
     return
+}
+
+function blackJack {
+    if(sum = 21){
+        return "BLACKJACK!!"
+    }
 }
