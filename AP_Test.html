@@ -4,13 +4,12 @@
 <script src="AP_Test.js"></script>
 
 <body>
-    <div class="onoffswitch">
-        <input type="checkbox" name="onoffswitch" class="onoffswitch-checkbox" id="myonoffswitch" onclick="AcesSwitcher()" checked>
-        <label class="onoffswitch-label" for="myonoffswitch"> <span class="onoffswitch-inner"></span> <span class="onoffswitch-switch"></span> </label>
-    </div>
     <input type="button" value="New Game" onclick="newGame()">
     <input type="button" value="Deal" onclick="dealCard(2, player1)">
     <input type="button" value="Hit" onclick="hit(player1)">
     <input type="button" value="End Turn" onclick="endTurn()"> </body>
+<p>
+    <input type="text" id="screen" placeholder=""> </p>
+<div id="result"></div>
 
 </html>

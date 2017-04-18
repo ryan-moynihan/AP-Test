@@ -9,19 +9,25 @@ var dealer = [];
 var sum = player1.reduce(add, 0);
 var sum2 = dealer.reduce(add, 0);
 
+function displayHand() {
+    document.getElementById('screen').value = player1;
+}
+
+function result(resultId) {
+    document.getElementById(resultId).innerHTML = "Test";
+}
+
 function dealCard(handsize, player) {
     var card;
     var deal;
     for (var i = 0; i < handsize; i++) {
         card = Math.floor(Math.random() * (deck.length));
-        console.log(i);
-        console.log(card);
         deal = deck[card];
-        deck.splice(card, 1);
-        console.log(i);
+        deck.splice(card, 1)
         console.log(deal);
         player.push(deal);
     }
+    displayHand();
 }
 
 function newGame() {
@@ -33,6 +39,7 @@ function newGame() {
 function hit(player) {
     dealCard(1, player);
     return checkForBust(player);
+    displayHand();
 }
 
 function add(a, b) {
@@ -43,9 +50,11 @@ function checkForBust(player) {
     var sum = player.reduce(add, 0);
     if (sum > 21) {
         return "Total: " + sum + " BUSTED!"
+        displayHand();
     }
     else {
         return "Total: " + sum
+        displayHand();
     }
 }
 
@@ -60,7 +69,7 @@ function endTurn() {
         sum = dealer.reduce(add, 0);
         if (sum >= 17) {
             done = true;
-            return checkForBust(dealer) + "</br>" + winner();
+            return checkForBust(dealer) + " " + winner();
         }
     }
     while (done == false)
@@ -74,9 +83,10 @@ function winner() {
         return "Dealer wins!"
     }
 }
-
-function blackJack {
-    if(sum = 21){
-        return "BLACKJACK!!"
+/**function checkForBlackJack(player) {
+    var sum = player.reduce(add, 0);
+    if (sum = 21) {
+        return "BLACKJACK!"
     }
 }
+*/
