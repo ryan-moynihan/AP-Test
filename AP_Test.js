@@ -96,7 +96,7 @@ function endTurn() {
 
 function winner() {
     if (player1.reduce(add, 0) <= 21 && (player1.reduce(add, 0) > dealer.reduce(add, 0) || dealer.reduce(add, 0) > 21)) {
-        return "Player1 wins!"
+        return "Player wins!"
     }
     else if (player1.reduce(add, 0) == 0 && dealer.reduce(add, 0) == 0) {
         return ""
