@@ -6,8 +6,20 @@ var dealer = [];
 var sum = player1.reduce(add, 0);
 var sum2 = dealer.reduce(add, 0);
 
-function displayHand() {
+function displayP1Hand() {
     document.getElementById('screen').value = player1;
+}
+
+function displayDHand() {
+    document.getElementById('screen2').value = dealer;
+}
+
+function displayWinner() {
+    document.getElementById('screen3').value = winner();
+}
+
+function displayBust() {
+    document.getElementById('screen').value = checkForBust();
 }
 
 function result(resultId) {
@@ -24,19 +36,22 @@ function dealCard(handsize, player) {
         console.log(deal);
         player.push(deal);
     }
-    displayHand();
+    displayP1Hand();
 }
 
 function newGame() {
     deck = deckOrig;
     player1 = [];
     dealer = [];
+    displayP1Hand();
+    displayDHand();
 }
 
 function hit(player) {
     dealCard(1, player);
     return checkForBust(player);
-    displayHand();
+    displayP1Hand();
+    displayDHand();
     document.write(player);
 }
 
@@ -48,11 +63,13 @@ function checkForBust(player) {
     var sum = player.reduce(add, 0);
     if (sum > 21) {
         return "Total: " + sum + " BUSTED!"
-        displayHand();
+        displayP1Hand();
+        displayDHand();
     }
     else {
         return "Total: " + sum
-        displayHand();
+        displayP1Hand();
+        displayDHand();
     }
 }
 
@@ -63,14 +80,17 @@ function endTurn() {
     do {
         if (dealer.reduce(add, 0) < 17) {
             hit(dealer);
+            displayDHand();
         }
         sum = dealer.reduce(add, 0);
         if (sum >= 17) {
             done = true;
             return checkForBust(dealer) + " " + winner();
+            displayDHand();
         }
     }
     while (done == false)
+    displayDHand();
 }
 
 function winner() {
