@@ -18,7 +18,7 @@
   }
 
   function displayBust() {
-      document.getElementById('screen').value = checkForBust();
+      document.getElementById('screen4').value = checkForBust();
   }
 
   function result(resultId) {
@@ -49,9 +49,10 @@
 
   function hit(player) {
       dealCard(1, player);
-      return checkForBust(player);
+      checkForBust(player);
       displayP1Hand();
       displayDHand();
+      displayBust();
       document.write(player);
   }
 
@@ -60,14 +61,13 @@
   }
 
   function checkForBust(player) {
-      var sum = player.reduce(add, 0);
-      if (sum > 21) {
-          return "Total: " + sum + " BUSTED!"
+      if (player.reduce(add, 0) > 21) {
+          return "BUSTED!"
           displayP1Hand();
           displayDHand();
       }
       else {
-          return "Total: " + sum
+          return ""
           displayP1Hand();
           displayDHand();
       }
@@ -86,7 +86,6 @@
           sum = dealer.reduce(add, 0);
           if (sum >= 17) {
               done = true;
-              return checkForBust(dealer);
               displayDHand();
               return checkForBust(dealer) + "</br>" + winner();
           }
