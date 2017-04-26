@@ -49,10 +49,9 @@
 
   function hit(player) {
       dealCard(1, player);
-      checkForBust(player);
+      return checkForBust(player);
       displayP1Hand();
       displayDHand();
-      displayBust();
       document.write(player);
   }
 
