@@ -94,26 +94,6 @@
       displayDHand();
   }
 
-<<<<<<< HEAD
-function winner() {
-    if (player1.reduce(add, 0) <= 21 && (player1.reduce(add, 0) > dealer.reduce(add, 0) || dealer.reduce(add, 0) > 21)) {
-        return "Player wins!"
-    }
-    else if (player1.reduce(add, 0) == 0 && dealer.reduce(add, 0) == 0) {
-        return ""
-    }
-    else {
-        return "Dealer wins!"
-    }
-}
-/**function checkForBlackJack(player) {
-    var sum = player.reduce(add, 0);
-    if (sum = 21) {
-        return "BLACKJACK!"
-        }
-    }
-*/
-=======
   function winner() {
       if (player1.reduce(add, 0) <= 21 && (player1.reduce(add, 0) > dealer.reduce(add, 0) || dealer.reduce(add, 0) > 21)) {
           return "Player wins!"
@@ -136,4 +116,3 @@ function winner() {
           return "BLACKJACK!!"
        }
   */
->>>>>>> origin/master
