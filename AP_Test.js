@@ -17,10 +17,6 @@
       document.getElementById('screen3').value = winner();
   }
 
-  function displayBust() {
-      document.getElementById('screen4').value = checkForBust();
-  }
-
   function result(resultId) {
       document.getElementById(resultId).innerHTML = "Test";
   }
@@ -60,19 +56,6 @@
       return a + b;
   }
 
-  function checkForBust(player) {
-      if (player.reduce(add, 0) > 21) {
-          return "BUSTED!"
-          displayP1Hand();
-          displayDHand();
-      }
-      else {
-          return ""
-          displayP1Hand();
-          displayDHand();
-      }
-  }
-
   function endTurn() {
       var done = false;
       var sum;
@@ -87,7 +70,6 @@
           if (sum >= 17) {
               done = true;
               displayDHand();
-              return checkForBust(dealer) + "</br>" + winner();
           }
       }
       while (done == false)
