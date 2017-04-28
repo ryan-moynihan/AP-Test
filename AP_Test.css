@@ -1,0 +1,32 @@
+#newGameButton {
+    background-color: dodgerblue;
+    border-color: darkblue;
+    border-radius: 25px;
+}
+
+#dealCardButton {
+    background-color: crimson;
+    border-color: firebrick;
+    border-radius: 25px;
+}
+
+#hitButton {
+    background-color: mediumpurple;
+    border-color: rebeccapurple;
+    border-radius: 25px;
+}
+
+#endTurnButton {
+    background-color: white;
+    border-color: whitesmoke;
+    border-radius: 25px;
+}
+
+body {
+    background-image: url("https://d2dd2p6kmnd1zb.cloudfront.net/system/review_images/attachments/000/070/523/original/Game_of_blackjack.jpg");
+    background-repeat: no-repeat;
+    background-color: #006400;
+    background-position: center center;
+    background-size: contain;
+    background-attachment: fixed;
+}
