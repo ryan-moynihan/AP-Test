@@ -45,7 +45,7 @@
 
   function hit(player) {
       dealCard(1, player);
-      return checkForBust(player);
+      return
       displayP1Hand();
       displayDHand();
       document.write(player);
