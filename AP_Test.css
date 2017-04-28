@@ -33,7 +33,14 @@
     border-radius: 25px;
 }
 
-#screen2 {}
+#p4 {
+    bottom: 100px;
+    position: fixed;
+    text-align: center;
+    align-content: center;
+    left: 600px;
+    font-size: 32px;
+}
 
 body {
     background-image: url("https://d2dd2p6kmnd1zb.cloudfront.net/system/review_images/attachments/000/070/523/original/Game_of_blackjack.jpg");
