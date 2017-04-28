@@ -4,12 +4,9 @@
 <script src="AP_Test.js"></script>
 <center>
 
-    <head id="head"> Blackjack by Ryan Moynihan and Matthew Gess </head>
-</center>
-<p></p>
-<center>
-
     <body>
+        <div id="head">Blackjack by Ryan Moynihan and Matthew Gess</div>
+        <p></p>
         <input type="button" id="newGameButton" value="New Game" onclick="newGame()">
         <input type="button" id="dealCardButton" value="Deal" onclick="dealCard(2, player1)">
         <input type="button" id="hitButton" value="Hit" onclick="hit(player1)">
@@ -17,15 +14,15 @@
         <input type="button" id="displayWinnerButton" value="Winner" onclick="displayWinner()"> </body>
 </center>
 <center>
-    <p> Player
-        <input type="text" id="screen" placeholder=""> </p>
-    <div id="result"></div>
-    <p> Winner
-        <input type="text" id="screen3" placeholder=""> </p>
-    <div id="result3"></div>
     <p> Dealer
         <input type="text" id="screen2" placeholder=""> </p>
     <div id="result2"></div>
+    <p> Winner
+        <input type="text" id="screen3" placeholder=""> </p>
+    <div id="result3"></div>
+    <p> Player
+        <input type="text" id="screen" placeholder=""> </p>
+    <div id="result"></div>
 </center>
 
 </html>
