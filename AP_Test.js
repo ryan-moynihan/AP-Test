@@ -45,10 +45,9 @@
 
   function hit(player) {
       dealCard(1, player);
-      checkForBust(player);
+      return checkForBust(player);
       displayP1Hand();
       displayDHand();
-      displayBust();
       document.write(player);
   }
 
@@ -89,12 +88,9 @@
   }
   /**function checkForBlackJack(player) {
       var sum = player.reduce(add, 0);
-      if (sum = 21) {
-          return "BLACKJACK!"
+      if (player.length = 2 && sum = 21) {
+          return "BLACKJACK!";
+          console.log("Blackjack!");
           }
-
-  function blackJack() {
-      if(sum = 21){
-          return "BLACKJACK!!"
-       }
+  }
   */
