@@ -33,6 +33,29 @@
     border-radius: 25px;
 }
 
+.text {
+    font-size: 24px;
+    width: 200px;
+}
+
+#p2 {
+    top: 100px;
+    position: fixed;
+    text-align: center;
+    align-content: center;
+    left: 600px;
+    font-size: 32px;
+}
+
+#p3 {
+    bottom: 350px;
+    position: fixed;
+    text-align: center;
+    align-content: center;
+    left: 600px;
+    font-size: 32px;
+}
+
 #p4 {
     bottom: 100px;
     position: fixed;
